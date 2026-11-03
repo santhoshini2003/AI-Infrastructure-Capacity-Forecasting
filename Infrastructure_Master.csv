@@ -1,0 +1,151 @@
+Infrastructure_ID,Resource_Name,Resource_Type,Resource_Category,Environment,Application_ID,Application_Name,Department,Business_Criticality,Location,Cloud_Provider,Region,Operating_System,Provisioned_Capacity,Capacity_Unit,Maximum_Capacity,Status
+INF-0001,PRD-ERP-APP-01,Application Server,Application,Production,APP-1001,ERP Financials,Finance,Critical,Chennai DC-1,On-Premises,South India,Ubuntu 22.04 LTS,32,vCPU,64,Active
+INF-0002,PRD-ERP-APP-02,Application Server,Application,Production,APP-1001,ERP Financials,Finance,Critical,Bengaluru DC-2,On-Premises,South India,Red Hat Enterprise Linux 8,64,vCPU,192,Active
+INF-0003,PRD-ERP-SRV-01,Server,Compute,Production,APP-1001,ERP Financials,Finance,Critical,Bengaluru DC-2,On-Premises,South India,Red Hat Enterprise Linux 8,96,vCPU,144,Active
+INF-0004,PRD-ERP-DB-01,Database,Database,Production,APP-1001,ERP Financials,Finance,Critical,Bengaluru DC-2,On-Premises,South India,Ubuntu 22.04 LTS,4000,GB,10000,Active
+INF-0005,PRD-ERP-DB-02,Database,Database,Production,APP-1001,ERP Financials,Finance,Critical,Bengaluru DC-2,On-Premises,South India,Oracle Linux 8,4000,GB,8000,Active
+INF-0006,PRD-ERP-STO-01,Storage,Storage,Production,APP-1001,ERP Financials,Finance,Critical,Bengaluru DC-2,On-Premises,South India,NetApp ONTAP 9.13,40000,GB,120000,Active
+INF-0007,DR-ERP-DB-01,Database,Database,Disaster Recovery,APP-1001,ERP Financials,Finance,Critical,ap-southeast-1 (Singapore),AWS,Southeast Asia,Oracle Linux 8,4000,GB,10000,Standby
+INF-0008,DR-ERP-APP-01,Application Server,Application,Disaster Recovery,APP-1001,ERP Financials,Finance,Critical,Kolkata DR Site,On-Premises,East India,Ubuntu 22.04 LTS,64,vCPU,128,Standby
+INF-0009,STG-ERP-APP-01,Application Server,Application,Staging,APP-1001,ERP Financials,Finance,High,Bengaluru DC-2,On-Premises,South India,Red Hat Enterprise Linux 8,8,vCPU,24,Active
+INF-0010,DEV-ERP-SRV-01,Server,Compute,Development,APP-1001,ERP Financials,Finance,Low,Chennai DC-1,On-Premises,South India,Red Hat Enterprise Linux 8,16,vCPU,24,Active
+INF-0011,PRD-PAY-LB-01,Load Balancer,Network,Production,APP-1002,Payment Gateway,Finance,Critical,ap-south-1 (Mumbai),AWS,West India,Managed Service (Cloud Load Balancer),10,Gbps,40,Active
+INF-0012,PRD-PAY-APIGW-01,API Gateway,Application,Production,APP-1002,Payment Gateway,Finance,Critical,ap-south-1 (Mumbai),AWS,West India,Managed Service (API Gateway),50000,Requests/Second,150000,Active
+INF-0013,PRD-PAY-APP-01,Application Server,Application,Production,APP-1002,Payment Gateway,Finance,Critical,ap-south-1 (Mumbai),AWS,West India,Red Hat Enterprise Linux 9,32,vCPU,64,Active
+INF-0014,PRD-PAY-APP-02,Application Server,Application,Production,APP-1002,Payment Gateway,Finance,Critical,Mumbai DC-3,On-Premises,West India,Red Hat Enterprise Linux 8,96,vCPU,192,Active
+INF-0015,PRD-PAY-K8S-01,Container Cluster,Compute,Production,APP-1002,Payment Gateway,Finance,Critical,ap-south-1 (Mumbai),AWS,West India,Amazon Linux 2023 (EKS),512,vCPU,1536,Active
+INF-0016,PRD-PAY-DB-01,Database,Database,Production,APP-1002,Payment Gateway,Finance,Critical,ap-south-1 (Mumbai),AWS,West India,Red Hat Enterprise Linux 9,8000,GB,16000,Active
+INF-0017,PRD-PAY-STO-01,Storage,Storage,Production,APP-1002,Payment Gateway,Finance,Critical,ap-south-1 (Mumbai),AWS,West India,Managed Service (Block/Object Storage),40000,GB,120000,Active
+INF-0018,DR-PAY-DB-01,Database,Database,Disaster Recovery,APP-1002,Payment Gateway,Finance,Critical,us-east-1 (N. Virginia),AWS,US East,Red Hat Enterprise Linux 9,4000,GB,12000,Standby
+INF-0019,DR-PAY-APP-01,Application Server,Application,Disaster Recovery,APP-1002,Payment Gateway,Finance,Critical,eu-west-1 (Ireland),AWS,Europe West,Red Hat Enterprise Linux 8,32,vCPU,64,Standby
+INF-0020,STG-PAY-APP-01,Application Server,Application,Staging,APP-1002,Payment Gateway,Finance,High,ap-south-1 (Mumbai),AWS,West India,SUSE Linux Enterprise 15,16,vCPU,32,Active
+INF-0021,DEV-PAY-VM-01,Virtual Machine,Compute,Development,APP-1002,Payment Gateway,Finance,Low,ap-south-1 (Mumbai),AWS,West India,Windows Server 2019,8,vCPU,32,Active
+INF-0022,PRD-GLR-APP-01,Application Server,Application,Production,APP-1003,General Ledger & Reconciliation,Finance,High,South India (Chennai),Microsoft Azure,South India,Ubuntu 22.04 LTS,64,vCPU,192,Active
+INF-0023,PRD-GLR-SRV-01,Server,Compute,Production,APP-1003,General Ledger & Reconciliation,Finance,High,Chennai DC-1,On-Premises,South India,Windows Server 2019,32,vCPU,64,Active
+INF-0024,PRD-GLR-DB-01,Database,Database,Production,APP-1003,General Ledger & Reconciliation,Finance,High,South India (Chennai),Microsoft Azure,South India,Red Hat Enterprise Linux 9,2000,GB,4000,Active
+INF-0025,DR-GLR-DB-01,Database,Database,Disaster Recovery,APP-1003,General Ledger & Reconciliation,Finance,High,Kolkata DR Site,On-Premises,East India,Oracle Linux 8,2000,GB,4000,Standby
+INF-0026,STG-GLR-APP-01,Application Server,Application,Staging,APP-1003,General Ledger & Reconciliation,Finance,Medium,South India (Chennai),Microsoft Azure,South India,SUSE Linux Enterprise 15,16,vCPU,32,Active
+INF-0027,PRD-PRL-APP-01,Application Server,Application,Production,APP-1004,Payroll Management,Human Resources,High,Mumbai DC-3,On-Premises,West India,SUSE Linux Enterprise 15,32,vCPU,64,Active
+INF-0028,PRD-PRL-VM-01,Virtual Machine,Compute,Production,APP-1004,Payroll Management,Human Resources,High,Pune DC-4,On-Premises,West India,Red Hat Enterprise Linux 9,16,vCPU,48,Active
+INF-0029,PRD-PRL-DB-01,Database,Database,Production,APP-1004,Payroll Management,Human Resources,High,Mumbai DC-3,On-Premises,West India,Ubuntu 22.04 LTS,1000,GB,2000,Active
+INF-0030,DR-PRL-DB-01,Database,Database,Disaster Recovery,APP-1004,Payroll Management,Human Resources,High,ap-south-2 (Hyderabad),AWS,South India,Oracle Linux 8,4000,GB,12000,Standby
+INF-0031,STG-PRL-APP-01,Application Server,Application,Staging,APP-1004,Payroll Management,Human Resources,Medium,Pune DC-4,On-Premises,West India,Ubuntu 22.04 LTS,8,vCPU,16,Active
+INF-0032,PRD-HRS-APP-01,Application Server,Application,Production,APP-1005,HR Self-Service Portal,Human Resources,Medium,South India (Chennai),Microsoft Azure,South India,Windows Server 2019,8,vCPU,24,Active
+INF-0033,PRD-HRS-DB-01,Database,Database,Production,APP-1005,HR Self-Service Portal,Human Resources,Medium,South India (Chennai),Microsoft Azure,South India,Ubuntu 22.04 LTS,2000,GB,4000,Active
+INF-0034,DEV-HRS-VM-01,Virtual Machine,Compute,Development,APP-1005,HR Self-Service Portal,Human Resources,Low,South India (Chennai),Microsoft Azure,South India,Windows Server 2022,4,vCPU,16,Active
+INF-0035,PRD-TAL-APP-01,Application Server,Application,Production,APP-1006,Talent & Recruitment Platform,Human Resources,Low,Southeast Asia (Singapore),Microsoft Azure,Southeast Asia,Ubuntu 22.04 LTS,8,vCPU,16,Active
+INF-0036,PRD-TAL-VM-01,Virtual Machine,Compute,Production,APP-1006,Talent & Recruitment Platform,Human Resources,Low,Southeast Asia (Singapore),Microsoft Azure,Southeast Asia,SUSE Linux Enterprise 15,4,vCPU,12,Active
+INF-0037,PRD-ECM-LB-01,Load Balancer,Network,Production,APP-1007,E-Commerce Storefront,E-Commerce,Critical,Pune DC-4,On-Premises,West India,F5 BIG-IP TMOS 16.1,20,Gbps,80,Active
+INF-0038,PRD-ECM-APIGW-01,API Gateway,Application,Production,APP-1007,E-Commerce Storefront,E-Commerce,Critical,Pune DC-4,On-Premises,West India,Kong Gateway on RHEL 8,10000,Requests/Second,20000,Active
+INF-0039,PRD-ECM-APP-01,Application Server,Application,Production,APP-1007,E-Commerce Storefront,E-Commerce,Critical,ap-south-1 (Mumbai),AWS,West India,Ubuntu 22.04 LTS,64,vCPU,128,Active
+INF-0040,PRD-ECM-APP-02,Application Server,Application,Production,APP-1007,E-Commerce Storefront,E-Commerce,Critical,Pune DC-4,On-Premises,West India,Windows Server 2019,64,vCPU,192,Active
+INF-0041,PRD-ECM-K8S-01,Container Cluster,Compute,Production,APP-1007,E-Commerce Storefront,E-Commerce,Critical,ap-south-1 (Mumbai),AWS,West India,Amazon Linux 2023 (EKS),1024,vCPU,2048,Active
+INF-0042,PRD-ECM-DB-01,Database,Database,Production,APP-1007,E-Commerce Storefront,E-Commerce,Critical,Pune DC-4,On-Premises,West India,Windows Server 2022,2000,GB,4000,Active
+INF-0043,PRD-ECM-STO-01,Storage,Storage,Production,APP-1007,E-Commerce Storefront,E-Commerce,Critical,ap-south-1 (Mumbai),AWS,West India,Managed Service (Block/Object Storage),80000,GB,120000,Active
+INF-0044,DR-ECM-DB-01,Database,Database,Disaster Recovery,APP-1007,E-Commerce Storefront,E-Commerce,Critical,eu-west-1 (Ireland),AWS,Europe West,Oracle Linux 8,8000,GB,24000,Standby
+INF-0045,DR-ECM-APP-01,Application Server,Application,Disaster Recovery,APP-1007,E-Commerce Storefront,E-Commerce,Critical,Kolkata DR Site,On-Premises,East India,Red Hat Enterprise Linux 8,96,vCPU,288,Standby
+INF-0046,STG-ECM-APP-01,Application Server,Application,Staging,APP-1007,E-Commerce Storefront,E-Commerce,High,Mumbai DC-3,On-Premises,West India,Ubuntu 22.04 LTS,8,vCPU,24,Active
+INF-0047,DEV-ECM-SRV-01,Server,Compute,Development,APP-1007,E-Commerce Storefront,E-Commerce,Low,Mumbai DC-3,On-Premises,West India,Red Hat Enterprise Linux 8,16,vCPU,32,Active
+INF-0048,PRD-OMS-LB-01,Load Balancer,Network,Production,APP-1008,Order Management System,E-Commerce,Critical,ap-south-2 (Hyderabad),AWS,South India,Managed Service (Cloud Load Balancer),10,Gbps,20,Active
+INF-0049,PRD-OMS-APIGW-01,API Gateway,Application,Production,APP-1008,Order Management System,E-Commerce,Critical,Chennai DC-1,On-Premises,South India,Kong Gateway on RHEL 8,50000,Requests/Second,150000,Active
+INF-0050,PRD-OMS-APP-01,Application Server,Application,Production,APP-1008,Order Management System,E-Commerce,Critical,Chennai DC-1,On-Premises,South India,Windows Server 2022,32,vCPU,64,Active
+INF-0051,PRD-OMS-APP-02,Application Server,Application,Production,APP-1008,Order Management System,E-Commerce,Critical,ap-south-2 (Hyderabad),AWS,South India,Ubuntu 22.04 LTS,64,vCPU,128,Active
+INF-0052,PRD-OMS-K8S-01,Container Cluster,Compute,Production,APP-1008,Order Management System,E-Commerce,Critical,ap-south-2 (Hyderabad),AWS,South India,Amazon Linux 2023 (EKS),1024,vCPU,3072,Active
+INF-0053,PRD-OMS-DB-01,Database,Database,Production,APP-1008,Order Management System,E-Commerce,Critical,ap-south-2 (Hyderabad),AWS,South India,Windows Server 2022,4000,GB,10000,Active
+INF-0054,PRD-OMS-STO-01,Storage,Storage,Production,APP-1008,Order Management System,E-Commerce,Critical,ap-south-2 (Hyderabad),AWS,South India,Managed Service (Block/Object Storage),20000,GB,30000,Active
+INF-0055,DR-OMS-DB-01,Database,Database,Disaster Recovery,APP-1008,Order Management System,E-Commerce,Critical,us-east-1 (N. Virginia),AWS,US East,Windows Server 2022,4000,GB,12000,Standby
+INF-0056,DR-OMS-APP-01,Application Server,Application,Disaster Recovery,APP-1008,Order Management System,E-Commerce,Critical,Kolkata DR Site,On-Premises,East India,Red Hat Enterprise Linux 9,96,vCPU,288,Standby
+INF-0057,STG-OMS-APP-01,Application Server,Application,Staging,APP-1008,Order Management System,E-Commerce,High,Chennai DC-1,On-Premises,South India,Windows Server 2019,16,vCPU,32,Active
+INF-0058,DEV-OMS-VM-01,Virtual Machine,Compute,Development,APP-1008,Order Management System,E-Commerce,Low,ap-south-2 (Hyderabad),AWS,South India,Windows Server 2019,4,vCPU,8,Under Maintenance
+INF-0059,PRD-CAT-APP-01,Application Server,Application,Production,APP-1009,Product Catalog Service,E-Commerce,High,Pune DC-4,On-Premises,West India,Ubuntu 22.04 LTS,64,vCPU,192,Active
+INF-0060,PRD-CAT-K8S-01,Container Cluster,Compute,Production,APP-1009,Product Catalog Service,E-Commerce,High,ap-south-1 (Mumbai),AWS,West India,Amazon Linux 2023 (EKS),256,vCPU,768,Active
+INF-0061,PRD-CAT-DB-01,Database,Database,Production,APP-1009,Product Catalog Service,E-Commerce,High,ap-south-1 (Mumbai),AWS,West India,Red Hat Enterprise Linux 9,4000,GB,10000,Active
+INF-0062,PRD-CAT-LB-01,Load Balancer,Network,Production,APP-1009,Product Catalog Service,E-Commerce,High,ap-south-1 (Mumbai),AWS,West India,Managed Service (Cloud Load Balancer),20,Gbps,50,Active
+INF-0063,STG-CAT-APP-01,Application Server,Application,Staging,APP-1009,Product Catalog Service,E-Commerce,Medium,ap-south-1 (Mumbai),AWS,West India,Ubuntu 22.04 LTS,16,vCPU,48,Active
+INF-0064,PRD-CRM-APP-01,Application Server,Application,Production,APP-1010,Customer Relationship Management,Sales & Marketing,High,Pune DC-4,On-Premises,West India,Red Hat Enterprise Linux 9,16,vCPU,32,Active
+INF-0065,PRD-CRM-VM-01,Virtual Machine,Compute,Production,APP-1010,Customer Relationship Management,Sales & Marketing,High,West India (Mumbai),Microsoft Azure,West India,Windows Server 2022,8,vCPU,32,Active
+INF-0066,PRD-CRM-DB-01,Database,Database,Production,APP-1010,Customer Relationship Management,Sales & Marketing,High,West India (Mumbai),Microsoft Azure,West India,Oracle Linux 8,4000,GB,8000,Active
+INF-0067,PRD-CRM-LB-01,Load Balancer,Network,Production,APP-1010,Customer Relationship Management,Sales & Marketing,High,West India (Mumbai),Microsoft Azure,West India,Managed Service (Cloud Load Balancer),20,Gbps,50,Active
+INF-0068,PRD-MKT-APP-01,Application Server,Application,Production,APP-1011,Marketing Automation Suite,Sales & Marketing,Medium,asia-southeast1 (Singapore),Google Cloud,Southeast Asia,Windows Server 2019,16,vCPU,32,Active
+INF-0069,PRD-MKT-DB-01,Database,Database,Production,APP-1011,Marketing Automation Suite,Sales & Marketing,Medium,asia-southeast1 (Singapore),Google Cloud,Southeast Asia,Oracle Linux 8,500,GB,1500,Active
+INF-0070,DEV-MKT-VM-01,Virtual Machine,Compute,Development,APP-1011,Marketing Automation Suite,Sales & Marketing,Low,asia-southeast1 (Singapore),Google Cloud,Southeast Asia,Ubuntu 22.04 LTS,8,vCPU,24,Active
+INF-0071,PRD-SLA-APP-01,Application Server,Application,Production,APP-1012,Sales Analytics Portal,Sales & Marketing,Medium,asia-south1 (Mumbai),Google Cloud,West India,Red Hat Enterprise Linux 9,16,vCPU,32,Decommissioning
+INF-0072,PRD-SLA-DB-01,Database,Database,Production,APP-1012,Sales Analytics Portal,Sales & Marketing,Medium,asia-south1 (Mumbai),Google Cloud,West India,Ubuntu 22.04 LTS,1000,GB,3000,Decommissioning
+INF-0073,PRD-WMS-APP-01,Application Server,Application,Production,APP-1013,Warehouse Management System,Supply Chain,Critical,ap-south-1 (Mumbai),AWS,West India,Red Hat Enterprise Linux 9,96,vCPU,288,Active
+INF-0074,PRD-WMS-APP-02,Application Server,Application,Production,APP-1013,Warehouse Management System,Supply Chain,Critical,Mumbai DC-3,On-Premises,West India,Ubuntu 22.04 LTS,32,vCPU,64,Active
+INF-0075,PRD-WMS-SRV-01,Server,Compute,Production,APP-1013,Warehouse Management System,Supply Chain,Critical,Pune DC-4,On-Premises,West India,Red Hat Enterprise Linux 8,64,vCPU,96,Active
+INF-0076,PRD-WMS-DB-01,Database,Database,Production,APP-1013,Warehouse Management System,Supply Chain,Critical,Mumbai DC-3,On-Premises,West India,Oracle Linux 8,4000,GB,8000,Active
+INF-0077,PRD-WMS-DB-02,Database,Database,Production,APP-1013,Warehouse Management System,Supply Chain,Critical,Mumbai DC-3,On-Premises,West India,Windows Server 2022,2000,GB,5000,Active
+INF-0078,PRD-WMS-STO-01,Storage,Storage,Production,APP-1013,Warehouse Management System,Supply Chain,Critical,Pune DC-4,On-Premises,West India,NetApp ONTAP 9.13,20000,GB,30000,Active
+INF-0079,DR-WMS-DB-01,Database,Database,Disaster Recovery,APP-1013,Warehouse Management System,Supply Chain,Critical,Kolkata DR Site,On-Premises,East India,Red Hat Enterprise Linux 9,2000,GB,6000,Standby
+INF-0080,DR-WMS-APP-01,Application Server,Application,Disaster Recovery,APP-1013,Warehouse Management System,Supply Chain,Critical,Kolkata DR Site,On-Premises,East India,Windows Server 2022,64,vCPU,128,Standby
+INF-0081,STG-WMS-APP-01,Application Server,Application,Staging,APP-1013,Warehouse Management System,Supply Chain,High,Pune DC-4,On-Premises,West India,Windows Server 2022,16,vCPU,48,Active
+INF-0082,DEV-WMS-VM-01,Virtual Machine,Compute,Development,APP-1013,Warehouse Management System,Supply Chain,Low,Pune DC-4,On-Premises,West India,Ubuntu 22.04 LTS,8,vCPU,32,Active
+INF-0083,PRD-IDP-APP-01,Application Server,Application,Production,APP-1014,Inventory & Demand Planning,Supply Chain,High,South India (Chennai),Microsoft Azure,South India,Windows Server 2022,64,vCPU,128,Active
+INF-0084,PRD-IDP-VM-01,Virtual Machine,Compute,Production,APP-1014,Inventory & Demand Planning,Supply Chain,High,South India (Chennai),Microsoft Azure,South India,Red Hat Enterprise Linux 9,16,vCPU,32,Active
+INF-0085,PRD-IDP-DB-01,Database,Database,Production,APP-1014,Inventory & Demand Planning,Supply Chain,High,South India (Chennai),Microsoft Azure,South India,Ubuntu 22.04 LTS,4000,GB,12000,Active
+INF-0086,STG-IDP-APP-01,Application Server,Application,Staging,APP-1014,Inventory & Demand Planning,Supply Chain,Medium,South India (Chennai),Microsoft Azure,South India,SUSE Linux Enterprise 15,32,vCPU,96,Active
+INF-0087,PRD-LGT-APP-01,Application Server,Application,Production,APP-1015,Logistics Tracking Platform,Supply Chain,High,ap-south-1 (Mumbai),AWS,West India,SUSE Linux Enterprise 15,64,vCPU,128,Active
+INF-0088,PRD-LGT-K8S-01,Container Cluster,Compute,Production,APP-1015,Logistics Tracking Platform,Supply Chain,High,ap-south-1 (Mumbai),AWS,West India,Amazon Linux 2023 (EKS),128,vCPU,384,Active
+INF-0089,PRD-LGT-DB-01,Database,Database,Production,APP-1015,Logistics Tracking Platform,Supply Chain,High,ap-south-1 (Mumbai),AWS,West India,Red Hat Enterprise Linux 9,4000,GB,10000,Active
+INF-0090,PRD-LGT-LB-01,Load Balancer,Network,Production,APP-1015,Logistics Tracking Platform,Supply Chain,High,ap-south-1 (Mumbai),AWS,West India,Managed Service (Cloud Load Balancer),10,Gbps,20,Active
+INF-0091,DR-LGT-DB-01,Database,Database,Disaster Recovery,APP-1015,Logistics Tracking Platform,Supply Chain,High,Kolkata DR Site,On-Premises,East India,Ubuntu 22.04 LTS,1000,GB,2000,Standby
+INF-0092,STG-LGT-APP-01,Application Server,Application,Staging,APP-1015,Logistics Tracking Platform,Supply Chain,Medium,ap-south-1 (Mumbai),AWS,West India,Windows Server 2019,16,vCPU,48,Active
+INF-0093,PRD-HLP-APP-01,Application Server,Application,Production,APP-1016,Customer Support Helpdesk,Customer Service,High,Southeast Asia (Singapore),Microsoft Azure,Southeast Asia,Windows Server 2022,32,vCPU,96,Active
+INF-0094,PRD-HLP-K8S-01,Container Cluster,Compute,Production,APP-1016,Customer Support Helpdesk,Customer Service,High,Southeast Asia (Singapore),Microsoft Azure,Southeast Asia,Ubuntu 22.04 (AKS),128,vCPU,256,Active
+INF-0095,PRD-HLP-DB-01,Database,Database,Production,APP-1016,Customer Support Helpdesk,Customer Service,High,Southeast Asia (Singapore),Microsoft Azure,Southeast Asia,Windows Server 2022,1000,GB,2500,Active
+INF-0096,PRD-HLP-LB-01,Load Balancer,Network,Production,APP-1016,Customer Support Helpdesk,Customer Service,High,Southeast Asia (Singapore),Microsoft Azure,Southeast Asia,Managed Service (Cloud Load Balancer),10,Gbps,40,Active
+INF-0097,STG-HLP-APP-01,Application Server,Application,Staging,APP-1016,Customer Support Helpdesk,Customer Service,Medium,Southeast Asia (Singapore),Microsoft Azure,Southeast Asia,Red Hat Enterprise Linux 8,16,vCPU,32,Active
+INF-0098,PRD-CTI-APP-01,Application Server,Application,Production,APP-1017,Contact Center Telephony (CTI),Customer Service,Critical,Bengaluru DC-2,On-Premises,South India,Ubuntu 22.04 LTS,64,vCPU,128,Active
+INF-0099,PRD-CTI-APP-02,Application Server,Application,Production,APP-1017,Contact Center Telephony (CTI),Customer Service,Critical,Bengaluru DC-2,On-Premises,South India,Windows Server 2022,64,vCPU,128,Active
+INF-0100,PRD-CTI-VM-01,Virtual Machine,Compute,Production,APP-1017,Contact Center Telephony (CTI),Customer Service,Critical,Bengaluru DC-2,On-Premises,South India,Red Hat Enterprise Linux 9,64,vCPU,256,Active
+INF-0101,PRD-CTI-DB-01,Database,Database,Production,APP-1017,Contact Center Telephony (CTI),Customer Service,Critical,Chennai DC-1,On-Premises,South India,Oracle Linux 8,8000,GB,20000,Active
+INF-0102,PRD-CTI-DB-02,Database,Database,Production,APP-1017,Contact Center Telephony (CTI),Customer Service,Critical,Bengaluru DC-2,On-Premises,South India,Ubuntu 22.04 LTS,4000,GB,10000,Active
+INF-0103,PRD-CTI-STO-01,Storage,Storage,Production,APP-1017,Contact Center Telephony (CTI),Customer Service,Critical,Bengaluru DC-2,On-Premises,South India,NetApp ONTAP 9.13,20000,GB,40000,Active
+INF-0104,DR-CTI-DB-01,Database,Database,Disaster Recovery,APP-1017,Contact Center Telephony (CTI),Customer Service,Critical,us-east-1 (N. Virginia),AWS,US East,Ubuntu 22.04 LTS,8000,GB,16000,Standby
+INF-0105,DR-CTI-APP-01,Application Server,Application,Disaster Recovery,APP-1017,Contact Center Telephony (CTI),Customer Service,Critical,Kolkata DR Site,On-Premises,East India,Red Hat Enterprise Linux 8,32,vCPU,96,Standby
+INF-0106,STG-CTI-APP-01,Application Server,Application,Staging,APP-1017,Contact Center Telephony (CTI),Customer Service,High,ap-south-2 (Hyderabad),AWS,South India,Ubuntu 22.04 LTS,8,vCPU,16,Active
+INF-0107,DEV-CTI-SRV-01,Server,Compute,Development,APP-1017,Contact Center Telephony (CTI),Customer Service,Low,Chennai DC-1,On-Premises,South India,SUSE Linux Enterprise 15,32,vCPU,64,Active
+INF-0108,PRD-EDW-APP-01,Application Server,Application,Production,APP-1018,Enterprise Data Warehouse,Analytics,High,asia-south1 (Mumbai),Google Cloud,West India,SUSE Linux Enterprise 15,32,vCPU,64,Active
+INF-0109,PRD-EDW-VM-01,Virtual Machine,Compute,Production,APP-1018,Enterprise Data Warehouse,Analytics,High,asia-south1 (Mumbai),Google Cloud,West India,Ubuntu 22.04 LTS,8,vCPU,16,Active
+INF-0110,PRD-EDW-DB-01,Database,Database,Production,APP-1018,Enterprise Data Warehouse,Analytics,High,asia-south1 (Mumbai),Google Cloud,West India,Windows Server 2022,2000,GB,6000,Active
+INF-0111,PRD-EDW-STO-01,Storage,Storage,Production,APP-1018,Enterprise Data Warehouse,Analytics,High,asia-south1 (Mumbai),Google Cloud,West India,Managed Service (Block/Object Storage),40000,GB,80000,Active
+INF-0112,STG-EDW-APP-01,Application Server,Application,Staging,APP-1018,Enterprise Data Warehouse,Analytics,Medium,asia-south1 (Mumbai),Google Cloud,West India,Windows Server 2019,16,vCPU,48,Active
+INF-0113,PRD-BIR-APP-01,Application Server,Application,Production,APP-1019,BI & Reporting Platform,Analytics,Medium,South India (Chennai),Microsoft Azure,South India,Ubuntu 22.04 LTS,32,vCPU,96,Under Maintenance
+INF-0114,PRD-BIR-DB-01,Database,Database,Production,APP-1019,BI & Reporting Platform,Analytics,Medium,Chennai DC-1,On-Premises,South India,Red Hat Enterprise Linux 9,2000,GB,5000,Active
+INF-0115,DEV-BIR-VM-01,Virtual Machine,Compute,Development,APP-1019,BI & Reporting Platform,Analytics,Low,South India (Chennai),Microsoft Azure,South India,Red Hat Enterprise Linux 9,8,vCPU,32,Active
+INF-0116,PRD-MLF-APP-01,Application Server,Application,Production,APP-1020,ML Feature Store,Analytics,Medium,us-east4 (N. Virginia),Google Cloud,US East,Windows Server 2022,32,vCPU,96,Active
+INF-0117,PRD-MLF-DB-01,Database,Database,Production,APP-1020,ML Feature Store,Analytics,Medium,us-east4 (N. Virginia),Google Cloud,US East,Red Hat Enterprise Linux 9,500,GB,1250,Active
+INF-0118,PRD-MLF-STO-01,Storage,Storage,Production,APP-1020,ML Feature Store,Analytics,Medium,us-east4 (N. Virginia),Google Cloud,US East,Managed Service (Block/Object Storage),5000,GB,15000,Active
+INF-0119,DEV-MLF-VM-01,Virtual Machine,Compute,Development,APP-1020,ML Feature Store,Analytics,Low,us-east4 (N. Virginia),Google Cloud,US East,SUSE Linux Enterprise 15,4,vCPU,8,Active
+INF-0120,PRD-IAM-LB-01,Load Balancer,Network,Production,APP-1021,Identity & Access Management,Security,Critical,Bengaluru DC-2,On-Premises,South India,F5 BIG-IP TMOS 16.1,10,Gbps,25,Active
+INF-0121,PRD-IAM-APIGW-01,API Gateway,Application,Production,APP-1021,Identity & Access Management,Security,Critical,South India (Chennai),Microsoft Azure,South India,Managed Service (API Gateway),25000,Requests/Second,50000,Active
+INF-0122,PRD-IAM-APP-01,Application Server,Application,Production,APP-1021,Identity & Access Management,Security,Critical,South India (Chennai),Microsoft Azure,South India,Red Hat Enterprise Linux 8,96,vCPU,288,Active
+INF-0123,PRD-IAM-APP-02,Application Server,Application,Production,APP-1021,Identity & Access Management,Security,Critical,South India (Chennai),Microsoft Azure,South India,Windows Server 2019,32,vCPU,64,Active
+INF-0124,PRD-IAM-K8S-01,Container Cluster,Compute,Production,APP-1021,Identity & Access Management,Security,Critical,South India (Chennai),Microsoft Azure,South India,Ubuntu 22.04 (AKS),512,vCPU,1536,Active
+INF-0125,PRD-IAM-DB-01,Database,Database,Production,APP-1021,Identity & Access Management,Security,Critical,South India (Chennai),Microsoft Azure,South India,Ubuntu 22.04 LTS,4000,GB,10000,Active
+INF-0126,PRD-IAM-STO-01,Storage,Storage,Production,APP-1021,Identity & Access Management,Security,Critical,Bengaluru DC-2,On-Premises,South India,NetApp ONTAP 9.13,40000,GB,120000,Active
+INF-0127,DR-IAM-DB-01,Database,Database,Disaster Recovery,APP-1021,Identity & Access Management,Security,Critical,East US (Virginia),Microsoft Azure,US East,Red Hat Enterprise Linux 9,2000,GB,5000,Standby
+INF-0128,DR-IAM-APP-01,Application Server,Application,Disaster Recovery,APP-1021,Identity & Access Management,Security,Critical,Kolkata DR Site,On-Premises,East India,Ubuntu 22.04 LTS,32,vCPU,96,Standby
+INF-0129,STG-IAM-APP-01,Application Server,Application,Staging,APP-1021,Identity & Access Management,Security,High,Chennai DC-1,On-Premises,South India,Ubuntu 22.04 LTS,32,vCPU,96,Active
+INF-0130,DEV-IAM-VM-01,Virtual Machine,Compute,Development,APP-1021,Identity & Access Management,Security,Low,South India (Chennai),Microsoft Azure,South India,Red Hat Enterprise Linux 8,8,vCPU,16,Under Maintenance
+INF-0131,PRD-SIM-APP-01,Application Server,Application,Production,APP-1022,Security Monitoring (SIEM),Security,High,ap-southeast-1 (Singapore),AWS,Southeast Asia,Windows Server 2019,64,vCPU,128,Active
+INF-0132,PRD-SIM-VM-01,Virtual Machine,Compute,Production,APP-1022,Security Monitoring (SIEM),Security,High,ap-southeast-1 (Singapore),AWS,Southeast Asia,Ubuntu 22.04 LTS,8,vCPU,16,Active
+INF-0133,PRD-SIM-DB-01,Database,Database,Production,APP-1022,Security Monitoring (SIEM),Security,High,ap-southeast-1 (Singapore),AWS,Southeast Asia,Oracle Linux 8,2000,GB,6000,Active
+INF-0134,PRD-CIC-APP-01,Application Server,Application,Production,APP-1023,CI/CD DevOps Platform,Engineering,Medium,eu-west-1 (Ireland),AWS,Europe West,Red Hat Enterprise Linux 9,32,vCPU,64,Active
+INF-0135,PRD-CIC-DB-01,Database,Database,Production,APP-1023,CI/CD DevOps Platform,Engineering,Medium,Bengaluru DC-2,On-Premises,South India,Red Hat Enterprise Linux 9,500,GB,1250,Active
+INF-0136,DEV-CIC-VM-01,Virtual Machine,Compute,Development,APP-1023,CI/CD DevOps Platform,Engineering,Low,eu-west-1 (Ireland),AWS,Europe West,SUSE Linux Enterprise 15,4,vCPU,8,Active
+INF-0137,PRD-EML-APP-01,Application Server,Application,Production,APP-1024,Email & Collaboration Gateway,IT Operations,High,West Europe (Netherlands),Microsoft Azure,Europe West,Windows Server 2022,64,vCPU,128,Active
+INF-0138,PRD-EML-K8S-01,Container Cluster,Compute,Production,APP-1024,Email & Collaboration Gateway,IT Operations,High,West Europe (Netherlands),Microsoft Azure,Europe West,Ubuntu 22.04 (AKS),128,vCPU,256,Active
+INF-0139,PRD-EML-DB-01,Database,Database,Production,APP-1024,Email & Collaboration Gateway,IT Operations,High,West Europe (Netherlands),Microsoft Azure,Europe West,Windows Server 2022,1000,GB,2500,Active
+INF-0140,PRD-EML-LB-01,Load Balancer,Network,Production,APP-1024,Email & Collaboration Gateway,IT Operations,High,West Europe (Netherlands),Microsoft Azure,Europe West,Managed Service (Cloud Load Balancer),4,Gbps,10,Active
+INF-0141,DR-EML-DB-01,Database,Database,Disaster Recovery,APP-1024,Email & Collaboration Gateway,IT Operations,High,West India (Mumbai),Microsoft Azure,West India,Oracle Linux 8,4000,GB,12000,Standby
+INF-0142,PRD-BKP-APP-01,Application Server,Application,Production,APP-1025,Backup & Archival Services,IT Operations,Medium,Kolkata DR Site,On-Premises,East India,Red Hat Enterprise Linux 8,8,vCPU,24,Active
+INF-0143,PRD-BKP-DB-01,Database,Database,Production,APP-1025,Backup & Archival Services,IT Operations,Medium,Kolkata DR Site,On-Premises,East India,Windows Server 2022,1000,GB,2500,Active
+INF-0144,PRD-BKP-STO-01,Storage,Storage,Production,APP-1025,Backup & Archival Services,IT Operations,Medium,Kolkata DR Site,On-Premises,East India,NetApp ONTAP 9.13,20000,GB,60000,Active
+INF-0145,DEV-BKP-SRV-01,Server,Compute,Development,APP-1025,Backup & Archival Services,IT Operations,Low,Kolkata DR Site,On-Premises,East India,Red Hat Enterprise Linux 9,16,vCPU,24,Active
+INF-0146,PRD-INT-APP-01,Application Server,Application,Production,APP-1026,Intranet Portal,IT Operations,Low,Bengaluru DC-2,On-Premises,South India,Red Hat Enterprise Linux 8,8,vCPU,24,Active
+INF-0147,PRD-INT-SRV-01,Server,Compute,Production,APP-1026,Intranet Portal,IT Operations,Low,Chennai DC-1,On-Premises,South India,SUSE Linux Enterprise 15,32,vCPU,48,Decommissioning
+INF-0148,PRD-DMS-APP-01,Application Server,Application,Production,APP-1027,Document Management System,Operations,Low,Pune DC-4,On-Premises,West India,Ubuntu 22.04 LTS,8,vCPU,16,Decommissioning
+INF-0149,PRD-DMS-VM-01,Virtual Machine,Compute,Production,APP-1027,Document Management System,Operations,Low,ap-south-1 (Mumbai),AWS,West India,Windows Server 2019,4,vCPU,16,Under Maintenance
+INF-0150,PRD-DMS-STO-01,Storage,Storage,Production,APP-1027,Document Management System,Operations,Low,Pune DC-4,On-Premises,West India,NetApp ONTAP 9.13,10000,GB,20000,Active

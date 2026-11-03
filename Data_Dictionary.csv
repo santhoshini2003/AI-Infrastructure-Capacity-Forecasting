@@ -1,0 +1,63 @@
+Table_Name,Column_Name,Data_Type,Description,Example_Value,Business_Purpose
+Infrastructure_Master,Infrastructure_ID,string,Unique ID of the infrastructure resource (Primary Key). Common key across all tables.,INF-0056,Entity key for every join and relationship.
+Infrastructure_Master,Resource_Name,string,Naming-convention hostname: ENV-APP-TYPE-seq.,DR-OMS-APP-01,Human-readable label for dashboards and drill-through.
+Infrastructure_Master,Resource_Type,string,"Server, Virtual Machine, Container Cluster, Application Server, API Gateway, Database, Storage, Load Balancer.",Application Server,Slice utilization and incidents by technology.
+Infrastructure_Master,Resource_Category,string,"Compute, Storage, Database, Network or Application.",Application,Determines which metric drives capacity planning (see README).
+Infrastructure_Master,Environment,string,"Production, Staging, Development or Disaster Recovery.",Disaster Recovery,Separate production risk from non-prod noise.
+Infrastructure_Master,Application_ID,string,ID of the business application the resource supports.,APP-1008,Application-level roll-ups and business-impact analysis.
+Infrastructure_Master,Application_Name,string,Business application name.,Order Management System,Link infrastructure risk to business services.
+Infrastructure_Master,Department,string,Owning business department.,E-Commerce,Department-wise usage and chargeback analysis.
+Infrastructure_Master,Business_Criticality,string,Critical / High / Medium / Low. Production & DR inherit the application tier; Staging is one tier lower; Development is Low.,Critical,Weighting of risk and prioritisation of remediation.
+Infrastructure_Master,Location,string,Data center or cloud region/zone name.,Kolkata DR Site,Site-level capacity and concentration risk.
+Infrastructure_Master,Cloud_Provider,string,"AWS, Microsoft Azure, Google Cloud or On-Premises.",On-Premises,Cloud-provider utilization and migration decisions.
+Infrastructure_Master,Region,string,"South India, East India, West India, Southeast Asia, US East, Europe West.",East India,Geographic roll-ups.
+Infrastructure_Master,Operating_System,string,OS / platform of the resource.,Red Hat Enterprise Linux 9,"Patching, lifecycle and compatibility analysis."
+Infrastructure_Master,Provisioned_Capacity,integer,Currently provisioned capacity in Capacity_Unit.,96,Denominator for utilization and capacity planning.
+Infrastructure_Master,Capacity_Unit,string,"vCPU, GB, Gbps or Requests/Second.",vCPU,Unit of Provisioned/Maximum capacity.
+Infrastructure_Master,Maximum_Capacity,integer,Maximum capacity the resource can be scaled to (platform/hardware limit).,288,Headroom for scale-up vs. needing migration.
+Infrastructure_Master,Status,string,"Active, Standby (DR), Under Maintenance, Decommissioning (snapshot at 2026-09-30).",Standby,Active-infrastructure KPI.
+Infrastructure_Metrics,Metric_ID,string,Unique reading ID (Primary Key).,MET-0042811,Row identity.
+Infrastructure_Metrics,Infrastructure_ID,string,Foreign key to Infrastructure_Master.,INF-0018,Join to resource attributes.
+Infrastructure_Metrics,Metric_Date,date,Date of the reading (2025-10-01 to 2026-09-30).,2026-02-13,Time-series axis; relate to a Date table.
+Infrastructure_Metrics,Metric_Time,time,"Time of the reading. Critical resources: 3 readings/day, High: 2, Medium/Low: 1.",02:00:00,Intraday / peak-hour analysis.
+Infrastructure_Metrics,CPU_Utilization_Percent,decimal,CPU utilization 0-100 during the sample hour.,4.47,"Compute saturation, forecasting target."
+Infrastructure_Metrics,Memory_Utilization_Percent,decimal,Memory utilization 0-100.,20.23,Memory exhaustion / leak detection.
+Infrastructure_Metrics,Storage_Used_GB,decimal,Used storage in GB (against provisioned storage for Storage/Database; against attached disk for other types).,2303.3,Storage growth trend.
+Infrastructure_Metrics,Storage_Utilization_Percent,decimal,Storage used as % of capacity.,57.58,Storage exhaustion forecasting.
+Infrastructure_Metrics,Network_In_GB,decimal,Inbound traffic in GB during the sample hour.,281.96,Network load analysis.
+Infrastructure_Metrics,Network_Out_GB,decimal,Outbound traffic in GB during the sample hour.,283.45,Network load analysis.
+Infrastructure_Metrics,Network_Utilization_Percent,decimal,Link utilization 0-100 (in+out vs link capacity).,12.56,Network saturation risk.
+Infrastructure_Metrics,Request_Count,integer,Requests/transactions served in the sample hour.,2068,Demand driver for capacity.
+Infrastructure_Metrics,Active_Users,integer,Concurrent active users/sessions served by the resource.,9,"Business load; correlates with CPU, requests."
+Infrastructure_Metrics,Response_Time_MS,decimal,Average response time in milliseconds.,21.5,Performance / SLA indicator.
+Infrastructure_Metrics,Error_Rate_Percent,decimal,Percentage of failed requests.,0.293,Early failure indicator.
+Infrastructure_Metrics,Availability_Percent,decimal,Availability over the trailing 24h (90-100). Reduced by incident downtime.,99.998,SLA / availability KPI.
+Infrastructure_Metrics,Workload_Volume,integer,Normalised work units (transactions/jobs/IO operations) per sample hour.,1375,Composite workload driver for ML.
+Infrastructure_Incidents,Incident_ID,string,Unique incident ID (Primary Key).,INC-002361,Row identity.
+Infrastructure_Incidents,Infrastructure_ID,string,Foreign key to Infrastructure_Master.,INF-0037,Incident history per resource.
+Infrastructure_Incidents,Incident_Date,date,Date the incident started.,2026-04-03,Incident trend and relation to utilization.
+Infrastructure_Incidents,Incident_Time,time,Time the incident started.,09:36:21,Time-of-day analysis.
+Infrastructure_Incidents,Incident_Type,string,"Performance Degradation, Capacity Exhaustion, Service Unavailable, Network Congestion, Storage Failure, Database Performance, High CPU, High Memory, Application Timeout, Infrastructure Failure.",High CPU,Symptom classification.
+Infrastructure_Incidents,Severity,string,Critical / High / Medium / Low technical severity.,Low,Prioritisation and KPI of critical incidents.
+Infrastructure_Incidents,Root_Cause,string,"High CPU Utilization, Memory Exhaustion, Storage Capacity, Network Saturation, Traffic Spike, Application Overload, Hardware Failure, Configuration Issue, Dependency Failure, Unexpected Workload.",High CPU Utilization,Root-cause analysis and prevention.
+Infrastructure_Incidents,Resource_Utilization,decimal,Utilization % of the implicated resource metric at incident time.,83.09,Utilization-before-incident analysis.
+Infrastructure_Incidents,Downtime_Minutes,integer,Minutes of service unavailability (0 for degradations without outage).,0,"Downtime KPI, availability."
+Infrastructure_Incidents,Users_Affected,integer,Estimated users impacted.,2242,Business impact sizing.
+Infrastructure_Incidents,Business_Impact,string,Critical / High / Medium / Low business impact.,High,Business-impact dashboard.
+Infrastructure_Incidents,Resolution_Time_Minutes,integer,Time to resolve (MTTR).,38,MTTR analysis.
+Infrastructure_Incidents,Incident_Status,string,"Closed, Resolved or Under Review.",Closed,Operational follow-up.
+Infrastructure_Incidents,Preventable_Flag,string,Yes if the incident was avoidable through capacity/proactive action.,Yes,Failure-prevention opportunity sizing; ML label.
+Capacity_Planning,Capacity_ID,string,Unique capacity-planning row ID (Primary Key).,CAP-005107,Row identity.
+Capacity_Planning,Infrastructure_ID,string,Foreign key to Infrastructure_Master.,INF-0007,Join to resource attributes.
+Capacity_Planning,Planning_Date,date,Planning snapshot date (every 4 days).,2026-02-14,Time axis of the forecast history.
+Capacity_Planning,Current_Capacity,decimal,Provisioned capacity (Capacity_Unit of the resource).,4000,Capacity baseline.
+Capacity_Planning,Current_Usage,decimal,Capacity currently used (Capacity_Unit).,1959.5416,Used vs available capacity.
+Capacity_Planning,Available_Capacity,decimal,Current_Capacity - Current_Usage.,2040.4584,Headroom.
+Capacity_Planning,Utilization_Percent,decimal,"7-day average utilization of the resource's primary capacity metric (CPU for Compute/Application, Storage for Storage/Database, Network for Network).",48.99,Current utilization for risk.
+Capacity_Planning,Monthly_Growth_Percent,decimal,Month-over-month relative growth of utilization from a 60-day trend (negative = shrinking).,1.3,Growth-rate KPI.
+Capacity_Planning,Forecast_30_Days,decimal,"Projected utilization % in 30 days (damped linear trend, capped at 100).",49.58,Capacity forecast.
+Capacity_Planning,Forecast_60_Days,decimal,Projected utilization % in 60 days.,50.07,Capacity forecast.
+Capacity_Planning,Forecast_90_Days,decimal,Projected utilization % in 90 days.,50.48,Capacity forecast.
+Capacity_Planning,Capacity_Threshold_Percent,integer,Planned maximum safe utilization (by criticality/category).,78,Breach / exhaustion detection.
+Capacity_Planning,Risk_Level,string,"Low / Medium / High / Critical derived from utilization, growth, forecast, threshold, incident history and criticality.",Low,Risk dashboard.
+Capacity_Planning,Recommended_Action,string,Rule-based remediation recommendation.,No Action Required,Preventive capacity planning.
